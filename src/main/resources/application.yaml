@@ -4,6 +4,12 @@ spring:
   ai:
     openai:
       api-key: ${OPENAI_API_KEY}
-  zy:
-    aiapp:
-      vectorStorePath: /tmp/vectorstore.json
+      embedding:
+        options:
+          model: text-embedding-3-small
+
+zy:
+ aiapp:
+   vectorStorePath: /tmp/vectorstore.json
+   documentsToLoad:
+     - classpath:/movies500Trimmed.csv
